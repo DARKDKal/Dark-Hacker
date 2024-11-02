@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark-Hacker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- إضافة أيقونات Font Awesome -->
     <style>
         body {
-            background-color: #000; /* خلفية سوداء */
+            background: linear-gradient(to bottom, #000, #333); /* خلفية متدرجة */
             color: #dcdcdc; /* نص بلون سكني */
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            margin: 0; /* إزالة المسافات الافتراضية */
         }
         h1 {
             color: #dcdcdc; /* عنوان بلون سكني */
@@ -28,6 +30,10 @@
             display: inline-block;
             width: 80%; /* عرض المربع */
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* تأثير ظل للعنصر */
+            transition: transform 0.3s; /* تأثير التحويل */
+        }
+        .app-box:hover {
+            transform: scale(1.05); /* زيادة حجم المربع عند التمرير */
         }
         .app-title {
             color: #ffcc00; /* لون نص اسم التطبيق */
@@ -56,9 +62,10 @@
             font-size: 16px;
             display: inline-block;
             margin-top: 15px; /* إضافة مسافة فوق الزر */
+            transition: background-color 0.3s; /* تأثير تغيير لون الزر */
         }
         .download-button:hover {
-            background-color: #cc0000; /* تأثير hover للزر */
+            background-color: #cc0000; /* تغيير لون الزر عند التمرير */
         }
         .footer {
             margin-top: 30px; /* مسافة فوق الفوتر */
@@ -68,15 +75,26 @@
         .footer span {
             color: #dcdcdc; /* لون الاسم السكني */
         }
+        /* تحسينات للأجهزة المحمولة */
+        @media (max-width: 600px) {
+            .app-box {
+                width: 95%; /* عرض المربع في الشاشات الصغيرة */
+            }
+            h1 {
+                font-size: 28px; /* حجم أصغر للعناوين في الشاشات الصغيرة */
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Dark-Hacker</h1>
     <div class="app-box">
+        <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i> <!-- أيقونة لعبة -->
         <div class="app-title">Haker Pubg Mobile</div> <!-- اسم التطبيق -->
         <div class="app-description">هكر ببجي موبايل</div> <!-- وصف التطبيق -->
         <div class="app-instructions">هذا التطبيق مصمم ليوفر لك ميزات رائعة في لعبة ببجي موبايل.</div> <!-- شرح -->
-        <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل</a> <!-- زر التحميل -->
+        <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a> <!-- زر تحميل -->
+        <a class="download-button" href="Haker-Pubg-Mobile.zip" download>تحميل ZIP</a> <!-- زر تحميل ملف آخر -->
     </div>
     <div class="footer">المنشئ <span>yosefalzyod</span></div> <!-- فوتر -->
 </body>
