@@ -4,118 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark-Hacker</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- إضافة أيقونات Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(to bottom, #000, #333); /* خلفية متدرجة */
-            color: #dcdcdc; /* نص بلون سكني */
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            background-color: #000; /* خلفية سوداء */
+            color: #D9D9D9; /* لون النص */
+            margin: 0;
             padding: 20px;
-            margin: 0; /* إزالة المسافات الافتراضية */
         }
         h1 {
-            color: #dcdcdc; /* عنوان بلون سكني */
-            font-size: 36px; /* حجم كبير للعناوين */
-            font-weight: bold; /* جعل الخط عريض */
-            margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
-            text-shadow: 0 0 10px #ffffff; /* إضافة تأثير ظلال للنص */
+            text-align: center;
+            color: #D1D1D1; /* لون سكني */
+            margin-bottom: 30px;
+            font-size: 36px; /* حجم العنوان */
         }
-        .updates-box {
-            border: 2px solid red; /* حواف حمراء */
-            border-radius: 15px; /* زوايا مستديرة */
+        .card {
+            background-color: #1c1c1c; /* خلفية لكل بطاقة */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             padding: 20px;
-            margin: 20px auto; /* مركزي */
-            background-color: #1a1a1a; /* لون خلفية المربع */
-            display: inline-block;
-            width: 80%; /* عرض المربع */
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* تأثير ظل للعنصر */
+            margin: 20px 0;
+            border: 2px solid #FFD700; /* حواف ذهبية */
+            transition: transform 0.3s, box-shadow 0.3s; /* تأثيرات */
         }
-        .updates-title {
-            color: #ff0000; /* لون نص عنوان التحديثات */
-            font-size: 28px; /* حجم كبير */
-            font-weight: bold; /* عريض */
-            margin: 10px 0; /* مسافة حول الاسم */
-        }
-        .app-box {
-            border: 2px solid gold; /* حواف ذهبية */
-            border-radius: 15px; /* زوايا مستديرة */
-            padding: 20px;
-            margin: 20px auto; /* مركزي */
-            background-color: #1a1a1a; /* لون خلفية المربع */
-            display: inline-block;
-            width: 80%; /* عرض المربع */
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* تأثير ظل للعنصر */
-            transition: transform 0.3s; /* تأثير التحويل */
-        }
-        .app-box:hover {
-            transform: scale(1.05); /* زيادة حجم المربع عند التمرير */
+        .card:hover {
+            transform: scale(1.05); /* تكبير البطاقة عند التمرير */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
         }
         .app-title {
-            color: #ffcc00; /* لون نص اسم التطبيق */
-            font-size: 28px; /* حجم كبير */
-            font-weight: bold; /* عريض */
-            margin: 10px 0; /* مسافة حول الاسم */
+            font-size: 24px; /* حجم اسم التطبيق */
+            color: #FFD700; /* لون ذهبي */
+            margin-bottom: 10px;
         }
-        .app-description {
-            color: #ffffff; /* لون الوصف */
-            font-size: 18px; /* حجم الوصف */
-            margin: 10px 0; /* مسافة حول الوصف */
-        }
-        .app-instructions {
-            color: #c0c0c0; /* لون الشرح */
-            font-size: 16px; /* حجم الشرح */
-            margin: 10px 0; /* مسافة حول الشرح */
+        .app-description, .app-update {
+            font-size: 16px; /* حجم الوصف */
+            color: #B0B0B0; /* لون رمادي فاتح */
+            margin: 5px 0;
         }
         .download-button {
-            background-color: #ff0000; /* زر تحميل باللون الأحمر */
-            color: #fff; /* نص أبيض */
+            background-color: #FF4500; /* لون زر التحميل */
+            color: white; /* لون النص في الزر */
             border: none;
-            border-radius: 5px;
             padding: 10px 20px;
+            border-radius: 5px;
             cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            display: inline-block;
-            margin-top: 15px; /* إضافة مسافة فوق الزر */
-            transition: background-color 0.3s; /* تأثير تغيير لون الزر */
+            font-size: 18px; /* حجم الزر */
+            transition: background-color 0.3s; /* تأثير عند التمرير */
         }
         .download-button:hover {
-            background-color: #cc0000; /* تغيير لون الزر عند التمرير */
+            background-color: #FF6347; /* لون الزر عند التمرير */
         }
         .footer {
-            margin-top: 30px; /* مسافة فوق الفوتر */
-            font-size: 12px; /* حجم خط صغير */
-            color: #ffffff; /* لون النص الأبيض */
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px; /* حجم الخط */
+            color: #D1D1D1; /* لون السكني */
         }
-        .footer span {
-            color: #dcdcdc; /* لون الاسم السكني */
-            font-size: 12px; /* حجم الخط صغير */
+        .updates-section {
+            background-color: #2E2E2E; /* خلفية قسم التحديثات */
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid #FF4500; /* حواف حمراء */
+            margin-top: 30px;
         }
-        /* تحسينات للأجهزة المحمولة */
-        @media (max-width: 600px) {
-            .updates-box, .app-box {
-                width: 95%; /* عرض المربع في الشاشات الصغيرة */
-            }
-            h1 {
-                font-size: 28px; /* حجم أصغر للعناوين في الشاشات الصغيرة */
-            }
+        .update-title {
+            color: #FF4500; /* لون العنوان */
+            font-size: 20px; /* حجم العنوان */
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
+
     <h1>Dark-Hacker</h1>
-    <div class="updates-box">
-        <div class="updates-title"><i class="fas fa-sync-alt" style="color: #ff0000;"></i> آخر التحديثات</div>
-        <p style="color: #ffffff; font-size: 16px;">تحديث جديد: تم تحسين أداء التطبيق وإصلاح بعض الأخطاء.</p>
+
+    <!-- بطاقة التطبيق -->
+    <div class="card">
+        <div class="app-title">Haker Pubg Mobile</div>
+        <div class="app-description">وصف التطبيق: هكر ببجي موبايل النسخه العالميه 32</div>
+        <div class="app-update">
+            <strong>آخر التحديثات:</strong><br>
+            1. كشف مواقع (رادار)<br>
+            2. طيران<br>
+            3. عدم الموت<br>
+            <strong>تحذير !!!!</strong> هذا الهكر غير امن يعني يمكن ان يتم تبنيدك يفضل استخدام فقط كشف المواقع او استخدام حساب غير  اساسي
+        </div>
+        <button class="download-button" onclick="window.location.href='رابط التحميل هنا';">تحميل التطبيق</button> <!-- استبدل 'رابط التحميل هنا' بالرابط المناسب -->
     </div>
-    <div class="app-box">
-        <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i> <!-- أيقونة لعبة -->
-        <div class="app-title">Haker Pubg Mobile</div> <!-- اسم التطبيق -->
-        <div class="app-description">هكر ببجي موبايل</div> <!-- وصف التطبيق -->
-        <div class="app-instructions">هذا التطبيق مصمم ليوفر لك ميزات رائعة في لعبة ببجي موبايل.</div> <!-- شرح -->
-        <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a> <!-- زر تحميل -->
+
+    <!-- قسم آخر التحديثات -->
+    <div class="updates-section">
+        <div class="update-title">آخر التحديثات</div>
+        <p>تم ايقاف المشروع الى حين اصلاح الاخطاء</p>
     </div>
-    <div class="footer"><span>HKR.YosefAlzyod</span></div> <!-- فوتر -->
+
+    <div class="footer">HKR.YosefAlzyod</div> <!-- هنا اسم المنشئ بدون كلمة "المنشئ" -->
 </body>
 </html>
