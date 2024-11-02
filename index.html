@@ -83,6 +83,22 @@
         .download-button:hover {
             background-color: #cc0000; /* تغيير لون الزر عند التمرير */
         }
+        .support-box {
+            border: 2px solid white; /* حواف بيضاء */
+            border-radius: 15px; /* زوايا مستديرة */
+            padding: 15px;
+            margin: 20px auto; /* مركزي */
+            background-color: #1a1a1a; /* لون خلفية المربع */
+            display: inline-block;
+            width: 80%; /* عرض المربع */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* تأثير ظل للعنصر */
+        }
+        .support-title {
+            color: #ffffff; /* لون نص عنوان الدعم الفني */
+            font-size: 24px; /* حجم كبير */
+            font-weight: bold; /* عريض */
+            margin: 10px 0; /* مسافة حول الاسم */
+        }
         .support-link {
             color: #ffcc00; /* لون رابط الدعم الفني */
             text-decoration: underline; /* خط تحت الرابط */
@@ -100,7 +116,7 @@
         }
         /* تحسينات للأجهزة المحمولة */
         @media (max-width: 600px) {
-            .updates-box, .app-box {
+            .updates-box, .app-box, .support-box {
                 width: 95%; /* عرض المربع في الشاشات الصغيرة */
             }
             h1 {
@@ -126,8 +142,10 @@
             <span style="color: red;">تحذير !! الهكر قابل للباند الرجاء استخدام حساب غير أساسي واستخدام فقط كشف المواقع وبذكاء.</span>
         </div> <!-- شرح -->
         <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a> <!-- زر تحميل -->
-        <br>
-        <a class="support-link" href="رابط_مجموعة_الديسكورد" target="_blank">الدعم الفني</a> <!-- رابط الدعم الفني -->
+    </div>
+    <div class="support-box">
+        <div class="support-title"><i class="fas fa-life-ring" style="color: #ffcc00;"></i> الدعم الفني</div> <!-- عنوان الدعم الفني -->
+        <a class="support-link" href="رابط_مجموعة_الديسكورد" target="_blank">انقر هنا للدخول إلى مجموعة الديسكورد</a> <!-- رابط الدعم الفني -->
     </div>
     <div class="footer"><span>HKR.YosefAlzyod</span></div> <!-- فوتر -->
 </body>
