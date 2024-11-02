@@ -21,6 +21,22 @@
             margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
             text-shadow: 0 0 10px #ffffff; /* إضافة تأثير ظلال للنص */
         }
+        .updates-box {
+            border: 2px solid red; /* حواف حمراء */
+            border-radius: 15px; /* زوايا مستديرة */
+            padding: 20px;
+            margin: 20px auto; /* مركزي */
+            background-color: #1a1a1a; /* لون خلفية المربع */
+            display: inline-block;
+            width: 80%; /* عرض المربع */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* تأثير ظل للعنصر */
+        }
+        .updates-title {
+            color: #ff0000; /* لون نص عنوان التحديثات */
+            font-size: 28px; /* حجم كبير */
+            font-weight: bold; /* عريض */
+            margin: 10px 0; /* مسافة حول الاسم */
+        }
         .app-box {
             border: 2px solid gold; /* حواف ذهبية */
             border-radius: 15px; /* زوايا مستديرة */
@@ -74,10 +90,11 @@
         }
         .footer span {
             color: #dcdcdc; /* لون الاسم السكني */
+            font-size: 12px; /* حجم الخط صغير */
         }
         /* تحسينات للأجهزة المحمولة */
         @media (max-width: 600px) {
-            .app-box {
+            .updates-box, .app-box {
                 width: 95%; /* عرض المربع في الشاشات الصغيرة */
             }
             h1 {
@@ -88,14 +105,17 @@
 </head>
 <body>
     <h1>Dark-Hacker</h1>
+    <div class="updates-box">
+        <div class="updates-title"><i class="fas fa-sync-alt" style="color: #ff0000;"></i> آخر التحديثات</div>
+        <p style="color: #ffffff; font-size: 16px;">تحديث جديد: تم تحسين أداء التطبيق وإصلاح بعض الأخطاء.</p>
+    </div>
     <div class="app-box">
         <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i> <!-- أيقونة لعبة -->
         <div class="app-title">Haker Pubg Mobile</div> <!-- اسم التطبيق -->
         <div class="app-description">هكر ببجي موبايل</div> <!-- وصف التطبيق -->
         <div class="app-instructions">هذا التطبيق مصمم ليوفر لك ميزات رائعة في لعبة ببجي موبايل.</div> <!-- شرح -->
         <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a> <!-- زر تحميل -->
-        <a class="download-button" href="Haker-Pubg-Mobile.zip" download>تحميل ZIP</a> <!-- زر تحميل ملف آخر -->
     </div>
-    <div class="footer">المنشئ <span>yosefalzyod</span></div> <!-- فوتر -->
+    <div class="footer">المنشئ <span>HKR.YosefAlzyod</span></div> <!-- فوتر -->
 </body>
 </html>
