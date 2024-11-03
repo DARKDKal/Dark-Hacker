@@ -58,6 +58,11 @@
             width: 80%;
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+        .app-box.orange {
+            border-color: orange;
+            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
         }
         .app-box:hover {
             transform: scale(1.05);
@@ -67,6 +72,9 @@
             font-size: 28px;
             font-weight: bold;
             margin: 10px 0;
+        }
+        .app-title.orange {
+            color: #ffa500;
         }
         .app-description {
             color: #ffffff;
@@ -98,6 +106,9 @@
         .download-button:hover, .support-button:hover {
             background-color: #cc0000;
         }
+        .download-button i {
+            margin-right: 5px;
+        }
         .footer {
             margin-top: 30px;
             font-size: 12px;
@@ -125,26 +136,6 @@
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
         }
-        .floating-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffcc00;
-            color: #000;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s;
-        }
-        .floating-button:hover {
-            background-color: #ffaa00;
-        }
     </style>
 </head>
 <body>
@@ -163,7 +154,19 @@
             3. سكنات<br>
             <span class="app-warning">تحذير !! الهكر قابل للباند، الرجاء استخدام حساب غير أساسي واستخدام فقط كشف المواقع وبذكاء.</span>
         </div>
-        <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a>
+        <a class="download-button" href="Haker-Pubg-Mobile.apk" download><i class="fas fa-download"></i> تحميل APK</a>
+    </div>
+    <div class="app-box orange">
+        <i class="fas fa-fire fa-2x" style="color: #ffa500;"></i>
+        <div class="app-title orange">HACKER FREE FIRE</div>
+        <div class="app-description">هكر فري فاير</div>
+        <div class="app-instructions">المميزات:<br>
+            1. ايم ثابت (ايم بوت)<br>
+            2. كاشف المواقع (رادار)<br>
+            3. سكنات<br>
+            <span class="app-warning">تحذير !! ممكن أن يتبند حسابك، الهكر غير محمي، الرجاء اللعب بحساب غير أساسي أو استخدام الرادار فقط وبذكاء.</span>
+        </div>
+        <a class="download-button" href="Haker-Free-Fire.apk" download><i class="fas fa-download"></i> تحميل APK</a>
     </div>
     <div class="support-box">
         <div class="updates-title"><i class="fas fa-life-ring" style="color: #ffcc00;"></i> الدعم الفني</div>
@@ -171,6 +174,5 @@
         <a class="support-button" href="https://discord.gg/DTPvtSkNx4" target="_blank">الدعم الفني</a>
     </div>
     <div class="footer"><span>HKR.YosefAlzyd</span></div>
-    <div class="floating-button" title="الدعم"><i class="fas fa-comments"></i></div>
 </body>
 </html>
