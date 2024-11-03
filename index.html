@@ -21,8 +21,33 @@
             margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
             text-shadow: 0 0 10px #ffffff; /* إضافة تأثير ظلال للنص */
         }
-        .updates-box, .app-box, .support-box {
-            border: 2px solid #ffcc00; /* حواف ذهبية */
+        .updates-box {
+            border: 2px solid red; /* حواف حمراء */
+            border-radius: 15px; /* زوايا مستديرة */
+            padding: 20px;
+            margin: 20px auto; /* مركزي */
+            background-color: #1a1a1a; /* لون خلفية المربع */
+            display: inline-block;
+            width: 80%; /* عرض المربع */
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.8); /* تأثير ظل وامض */
+            animation: pulse 1.5s infinite; /* تأثير وميض */
+        }
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 0, 0, 1);
+            }
+        }
+        .updates-title {
+            color: #ff0000; /* لون نص عنوان التحديثات */
+            font-size: 28px; /* حجم كبير */
+            font-weight: bold; /* عريض */
+            margin: 10px 0; /* مسافة حول الاسم */
+        }
+        .app-box, .support-box {
+            border: 2px solid gold; /* حواف ذهبية */
             border-radius: 15px; /* زوايا مستديرة */
             padding: 20px;
             margin: 20px auto; /* مركزي */
@@ -31,26 +56,27 @@
             width: 80%; /* عرض المربع */
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* تأثير ظل للعنصر */
         }
-        .updates-title, .support-title {
+        .support-title {
             color: #ffcc00; /* لون النص */
             font-size: 28px; /* حجم كبير */
             font-weight: bold; /* عريض */
             margin: 10px 0; /* مسافة حول الاسم */
         }
         .support-link {
-            color: #000; /* لون النص أسود */
+            color: #fff; /* لون النص أبيض */
             text-decoration: none;
             font-size: 18px;
-            border: 1px solid #fff; /* حواف بيضاء */
+            border: 1px solid #ff0000; /* حواف حمراء */
             padding: 10px 20px;
             border-radius: 5px;
             display: inline-block;
             margin-top: 10px;
-            background-color: #ffcc00; /* خلفية ذهبية */
-            transition: background-color 0.3s;
+            background-color: #ff0000; /* خلفية حمراء */
+            transition: background-color 0.3s, color 0.3s;
         }
         .support-link:hover {
-            background-color: #e6b800; /* تغيير لون الزر عند التمرير */
+            background-color: #cc0000; /* تغيير لون الزر عند التمرير */
+            color: #ffcc00; /* تغيير لون النص عند التمرير */
         }
     </style>
 </head>
