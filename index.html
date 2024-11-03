@@ -60,6 +60,7 @@
             transition: transform 0.3s;
             margin-bottom: 30px;
             position: relative; /* لتحديد موضع الوميض */
+            overflow: hidden; /* لقطع أي محتوى زائد */
         }
         .app-box.orange {
             border-color: orange;
@@ -137,43 +138,40 @@
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
         }
-        /* تأثير الوميض */
-        .app-box:before {
-            content: '';
+        /* تأثير الدودة */
+        .worm {
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 15px;
-            border: 2px solid transparent;
-            animation: border-glow 1.5s infinite alternate;
+            z-index: 1;
+            pointer-events: none;
         }
         /* مربع ببجي */
-        .app-box:nth-of-type(1):before {
-            border-color: red;
-            animation-name: border-glow-pubg;
+        .app-box:nth-of-type(1) .worm {
+            background: linear-gradient(90deg, rgba(255, 0, 0, 0.5), rgba(255, 0, 0, 0.5), transparent);
+            animation: move-worm-pubg 3s linear infinite;
         }
         /* مربع فري فاير */
-        .app-box:nth-of-type(2):before {
-            border-color: orange;
-            animation-name: border-glow-freefire;
+        .app-box:nth-of-type(2) .worm {
+            background: linear-gradient(-90deg, rgba(255, 165, 0, 0.5), rgba(255, 165, 0, 0.5), transparent);
+            animation: move-worm-freefire 3s linear infinite;
         }
-        @keyframes border-glow-pubg {
+        @keyframes move-worm-pubg {
             0% {
-                border-color: transparent;
+                transform: translateX(-100%);
             }
             100% {
-                border-color: red;
                 transform: translateX(100%);
             }
         }
-        @keyframes border-glow-freefire {
+        @keyframes move-worm-freefire {
             0% {
-                border-color: transparent;
+                transform: translateX(100%);
             }
             100% {
-                border-color: orange;
                 transform: translateX(-100%);
             }
         }
@@ -186,6 +184,7 @@
         <p style="color: #ffffff; font-size: 16px;">تم إيقاف المشروع إلى إشعار آخر</p>
     </div>
     <div class="app-box">
+        <div class="worm"></div> <!-- تأثير الدودة -->
         <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i>
         <div class="app-title">Haker Pubg Mobile</div>
         <div class="app-description">هكر ببجي موبايل النسخة العالمية 32</div>
@@ -198,6 +197,7 @@
         <a class="download-button" href="Haker-Pubg-Mobile.apk" download><i class="fas fa-download"></i> تحميل APK</a>
     </div>
     <div class="app-box orange">
+        <div class="worm"></div> <!-- تأثير الدودة -->
         <i class="fas fa-fire fa-2x" style="color: #ffa500;"></i>
         <div class="app-title orange">HACKER FREE FIRE</div>
         <div class="app-description">هكر فري فاير</div>
@@ -212,8 +212,4 @@
     <div class="support-box">
         <div class="updates-title"><i class="fas fa-life-ring" style="color: #ffcc00;"></i> الدعم الفني</div>
         <p>إذا حصل معك أي خطأ توجه للدعم الفني أو إذا كان لديك أي استفسار أو اقتراح أو للتواصل.</p>
-        <a class="support-button" href="https://discord.gg/DTPvtSkNx4" target="_blank"><i class="fas fa-headset"></i> الدعم الفني</a>
-    </div>
-    <div class="footer"><span>HKR.YosefAlzyod</span></div>
-</body>
-</html>
+        <
