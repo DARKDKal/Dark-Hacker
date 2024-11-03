@@ -4,127 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dark-Hacker</title>
+    <!-- ربط مكتبة أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- ربط خط Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* إعدادات الجسم */
         body {
-            background: linear-gradient(to bottom, #000, #333);
-            color: #dcdcdc;
-            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(to bottom, #000, #333); /* خلفية متدرجة */
+            color: #dcdcdc; /* لون النص السكني */
+            font-family: 'Roboto', sans-serif; /* استخدام خط Roboto */
             text-align: center;
-            padding: 20px;
-            margin: 0;
-            transition: background-color 0.5s;
+            padding: 20px; /* حواف داخلية */
+            margin: 0; /* إزالة المسافات الافتراضية */
+            scroll-behavior: smooth; /* تأثير تمرير سلس */
         }
+        
+        /* إعدادات العنوان */
         h1 {
-            color: #dcdcdc;
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px #ffffff;
-            animation: text-glow 1.5s infinite alternate;
+            color: #dcdcdc; /* لون عنوان الصفحة */
+            font-size: 36px; /* حجم كبير */
+            font-weight: bold; /* جعل الخط عريض */
+            margin-bottom: 20px; /* مسافة أسفل العنوان */
+            text-shadow: 0 0 10px #ffffff; /* تأثير ظلال للنص */
         }
-        @keyframes text-glow {
-            0% {
-                text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
-            }
-            100% {
-                text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00;
-            }
-        }
-        .updates-box, .support-box {
-            border: 2px solid;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            background-color: #1a1a1a;
+        
+        /* إعدادات المربعات */
+        .updates-box, .support-box, .free-fire-box, .app-box {
+            border: 2px solid; /* حواف */
+            border-radius: 15px; /* زوايا مستديرة */
+            padding: 20px; /* حواف داخلية */
+            margin: 20px auto; /* مركز المربع */
+            background-color: #1a1a1a; /* لون خلفية المربع */
             display: inline-block;
-            width: 80%;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-            animation: pulse 1.5s infinite;
+            width: 80%; /* عرض المربع */
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* تأثير ظل */
+            transition: transform 0.3s; /* تأثير التحويل */
         }
+        
+        /* تحديد ألوان الحواف للمربعات */
         .updates-box {
-            border-color: red;
+            border-color: red; /* حواف حمراء */
         }
         .support-box {
-            border-color: yellow;
+            border-color: yellow; /* حواف صفراء */
+        }
+        .free-fire-box {
+            border-color: orange; /* حواف برتقالية */
         }
         .app-box {
-            border: 2px solid gold;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px auto;
-            background-color: #1a1a1a;
-            display: inline-block;
-            width: 80%;
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            transition: transform 0.3s;
-            margin-bottom: 30px;
+            border-color: gold; /* حواف ذهبية */
         }
-        .app-box.orange {
-            border-color: orange;
-            box-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+        
+        /* إعدادات العناوين داخل المربعات */
+        .updates-title, .free-fire-title, .support-title {
+            color: #ff0000; /* لون النص */
+            font-size: 28px; /* حجم كبير */
+            font-weight: bold; /* عريض */
+            margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
         }
-        .app-box:hover {
-            transform: scale(1.05);
+        
+        /* إعدادات الوصف */
+        .app-description, .app-instructions, .free-fire-description {
+            color: #ffffff; /* لون الوصف */
+            font-size: 18px; /* حجم الوصف */
+            margin: 10px 0; /* مسافة حول الوصف */
         }
-        .app-title {
-            color: #ffcc00;
-            font-size: 28px;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-        .app-title.orange {
-            color: #ffa500;
-        }
-        .app-description {
-            color: #ffffff;
-            font-size: 18px;
-            margin: 10px 0;
-        }
+        
         .app-instructions {
-            color: #c0c0c0;
-            font-size: 16px;
-            margin: 10px 0;
+            color: #c0c0c0; /* لون الشرح */
+            font-size: 16px; /* حجم الشرح */
         }
+        
         .app-warning {
-            color: #ff0000;
-            font-weight: bold;
+            color: #ff0000; /* لون التحذير */
+            font-weight: bold; /* جعل الخط عريض */
         }
+        
+        /* إعدادات الأزرار */
         .download-button, .support-button {
-            background-color: #ff0000;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
+            background-color: #ff0000; /* زر تحميل باللون الأحمر */
+            color: #fff; /* نص أبيض */
+            border: none; /* بدون حدود */
+            border-radius: 5px; /* زوايا مستديرة */
+            padding: 10px 20px; /* حواف داخلية */
+            cursor: pointer; /* تغيير شكل المؤشر */
+            text-decoration: none; /* إزالة التسطير */
+            font-size: 16px; /* حجم الزر */
             display: inline-block;
-            margin-top: 15px;
-            transition: background-color 0.3s;
+            margin-top: 15px; /* إضافة مسافة فوق الزر */
+            transition: background-color 0.3s; /* تأثير تغيير لون الزر */
         }
+        
+        /* تغيير لون الأزرار عند التمرير */
         .download-button:hover, .support-button:hover {
-            background-color: #cc0000;
+            background-color: #cc0000; /* تغيير لون الزر */
         }
-        .download-button i {
-            margin-right: 5px;
-        }
+        
+        /* إعدادات الفوتر */
         .footer {
-            margin-top: 30px;
-            font-size: 12px;
-            color: #ffffff;
+            margin-top: 30px; /* مسافة فوق الفوتر */
+            font-size: 12px; /* حجم نص صغير */
+            color: #ffffff; /* لون النص الأبيض */
         }
+        
         .footer span {
-            color: #dcdcdc;
+            color: #dcdcdc; /* لون الاسم السكني */
+            font-size: 12px; /* حجم الخط صغير */
         }
+        
+        /* تحسينات للأجهزة المحمولة */
         @media (max-width: 600px) {
-            .updates-box, .app-box, .support-box {
-                width: 95%;
+            .updates-box, .app-box, .support-box, .free-fire-box {
+                width: 95%; /* عرض المربع في الشاشات الصغيرة */
             }
             h1 {
-                font-size: 28px;
+                font-size: 28px; /* حجم أصغر للعناوين في الشاشات الصغيرة */
             }
         }
+        
+        /* تأثير الوميض */
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
@@ -140,39 +139,41 @@
 </head>
 <body>
     <h1>Dark-Hacker</h1>
+    
+    <!-- مربع آخر التحديثات -->
     <div class="updates-box">
         <div class="updates-title"><i class="fas fa-sync-alt" style="color: #ff0000;"></i> آخر التحديثات</div>
         <p style="color: #ffffff; font-size: 16px;">تم إيقاف المشروع إلى إشعار آخر</p>
     </div>
+
+    <!-- مربع هكر ببجي موبايل -->
     <div class="app-box">
-        <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i>
+        <i class="fas fa-gamepad fa-2x" style="color: #ffcc00;"></i> <!-- أيقونة لعبة -->
         <div class="app-title">Haker Pubg Mobile</div>
         <div class="app-description">هكر ببجي موبايل النسخة العالمية 32</div>
         <div class="app-instructions">المميزات:<br>
-            1. كشف الموقع (رادار)<br>
-            2. ايم ثابت (ايم بوت)<br>
-            3. سكنات<br>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> كشف الموقع (رادار)<br>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> ايم ثابت (ايم بوت)<br>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> سكنات<br>
             <span class="app-warning">تحذير !! الهكر قابل للباند، الرجاء استخدام حساب غير أساسي واستخدام فقط كشف المواقع وبذكاء.</span>
         </div>
-        <a class="download-button" href="Haker-Pubg-Mobile.apk" download><i class="fas fa-download"></i> تحميل APK</a>
+        <a class="download-button" href="Haker-Pubg-Mobile.apk" download>تحميل APK</a>
     </div>
-    <div class="app-box orange">
-        <i class="fas fa-fire fa-2x" style="color: #ffa500;"></i>
-        <div class="app-title orange">HACKER FREE FIRE</div>
-        <div class="app-description">هكر فري فاير</div>
+
+    <!-- مربع هكر فري فاير -->
+    <div class="free-fire-box">
+        <div class="free-fire-title"><i class="fas fa-fire" style="color: orange;"></i> HACKER FREE FIRE</div>
+        <div class="free-fire-description">هكر فري فاير النسخة العالمية</div>
         <div class="app-instructions">المميزات:<br>
-            1. ايم ثابت (ايم بوت)<br>
-            2. كاشف المواقع (رادار)<br>
-            3. سكنات<br>
-            <span class="app-warning">تحذير !! ممكن أن يتبند حسابك، الهكر غير محمي، الرجاء اللعب بحساب غير أساسي أو استخدام الرادار فقط وبذكاء</span>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> ايم ثابت (ايم بوت)<br>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> كاشف المواقع (رادار)<br>
+            <i class="fas fa-check" style="color: #ffcc00;"></i> سكنات<br>
+            <span class="app-warning">تحذير !! ممكن أن يتبند حسابك، الهكر غير محمي، الرجاء لعب بحساب غير أساسي أو استخدام رادار فقط وبذكاء.</span>
         </div>
-        <a class="download-button" href="Haker-Free-Fire.apk" download><i class="fas fa-download"></i> تحميل APK</a>
+        <a class="download-button" href="Hacker-Free-Fire.apk" download>تحميل APK</a>
     </div>
+
+    <!-- مربع الدعم الفني -->
     <div class="support-box">
-        <div class="updates-title"><i class="fas fa-life-ring" style="color: #ffcc00;"></i> الدعم الفني</div>
-        <p>إذا حصل معك أي خطأ توجه للدعم الفني أو إذا كان لديك أي استفسار أو اقتراح</p>
-        <a class="support-button" href="https://discord.gg/DTPvtSkNx4" target="_blank">الدعم الفني</a>
-    </div>
-    <div class="footer"><span>HKR.YosefAlzyod</span></div>
-</body>
-</html>
+        <div class="support-title"><i class="fas fa-headset" style="color: yellow;"></i> الدعم الفني</div>
+        <p style="color: #ffffff; font-size: 16px;">لأي استفسارات أو دعم، يرجى الانضمام إلى <a href="https://discord.gg/DTPvtSkNx444" style="color: #ffcc00;">د
