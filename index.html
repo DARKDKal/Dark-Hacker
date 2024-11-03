@@ -59,6 +59,7 @@
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
             transition: transform 0.3s;
             margin-bottom: 30px;
+            position: relative; /* لتحديد موضع الوميض */
         }
         .app-box.orange {
             border-color: orange;
@@ -136,6 +137,46 @@
                 box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
             }
         }
+        /* تأثير الوميض */
+        .app-box:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            animation: border-glow 1.5s infinite alternate;
+        }
+        /* مربع ببجي */
+        .app-box:nth-of-type(1):before {
+            border-color: red;
+            animation-name: border-glow-pubg;
+        }
+        /* مربع فري فاير */
+        .app-box:nth-of-type(2):before {
+            border-color: orange;
+            animation-name: border-glow-freefire;
+        }
+        @keyframes border-glow-pubg {
+            0% {
+                border-color: transparent;
+            }
+            100% {
+                border-color: red;
+                transform: translateX(100%);
+            }
+        }
+        @keyframes border-glow-freefire {
+            0% {
+                border-color: transparent;
+            }
+            100% {
+                border-color: orange;
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 <body>
@@ -170,7 +211,7 @@
     </div>
     <div class="support-box">
         <div class="updates-title"><i class="fas fa-life-ring" style="color: #ffcc00;"></i> الدعم الفني</div>
-        <p> إذا حصل معك أي خطأ توجه للدعم الفني أو إذا كان لديك أي استفسار أو اقتراح أو للتواصل </p>
+        <p>إذا حصل معك أي خطأ توجه للدعم الفني أو إذا كان لديك أي استفسار أو اقتراح أو للتواصل.</p>
         <a class="support-button" href="https://discord.gg/DTPvtSkNx4" target="_blank"><i class="fas fa-headset"></i> الدعم الفني</a>
     </div>
     <div class="footer"><span>HKR.YosefAlzyod</span></div>
